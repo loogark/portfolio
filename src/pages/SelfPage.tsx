@@ -95,10 +95,10 @@ export const SelfPage = () => {
             my='36px'
             wrap={"wrap"}
           >
-            <ResumeCard name='EN' link='/en.pdf' />
+            <ResumeCard name='EN' link='/resumes/en.pdf' />
             <ResumeCard
               name='FR'
-              link='/fr.pdf'
+              link='/resumes/fr.pdf'
               bg='linear-gradient(744deg,#bb3e03,#f28482 60%,#f5cac3)'
             />
           </Flex>
