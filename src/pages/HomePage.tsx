@@ -39,7 +39,7 @@ export const HomePage = () => {
         w='100%'
         h={{ base: "auto", md: "100vh" }}
         bg='#4831d4'
-        scrollSnapAlign='center'
+        scrollSnapAlign='start'
         scrollSnapStop='always'
         as='section'
         overflow='hidden'
@@ -49,7 +49,7 @@ export const HomePage = () => {
         <Self />
       </Box>
       <Box
-        scrollSnapAlign='center'
+        scrollSnapAlign='start'
         scrollSnapStop='always'
         w='100%'
         h={{ base: "auto", md: "100vh" }}
@@ -60,13 +60,13 @@ export const HomePage = () => {
         {isLargeScreen ? <SkillsSquare /> : <SkillsProgress />}
       </Box>
       <Box
-        scrollSnapAlign='center'
+        scrollSnapAlign='start'
         scrollSnapStop='always'
         w='100%'
         h={{ base: "auto", md: "100vh" }}
         bg='#4831d4'
         as='section'
-        py={{ base: "120px", md: "0px" }}
+        py={{ base: "75px", md: "0px" }}
       >
         <Contact />
       </Box>

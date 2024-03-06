@@ -15,7 +15,7 @@ export const Hero = ({ onScroll }: Props) => {
   return (
     <Box
       ref={ref}
-      scrollSnapAlign='center'
+      scrollSnapAlign='start'
       as='section'
       w='100%'
       h='100vh'

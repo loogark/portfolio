@@ -18,8 +18,8 @@ export const MaskedText = () => {
         position='absolute'
         align='center'
         justify='center'
-        fontSize={"5vw"}
-        lineHeight={"5vw"}
+        fontSize={{ base: "10vw", lg: "5vw" }}
+        lineHeight={{ base: "10vw", lg: "5vw" }}
         color='white'
         cursor='default'
         style={{
@@ -39,6 +39,8 @@ export const MaskedText = () => {
         <Heading
           w='1000px'
           p='40px'
+          lineHeight='inherit'
+          fontSize='inherit'
           letterSpacing={"2.5px"}
           onMouseEnter={() => {
             setIsHovered(true);
@@ -57,12 +59,18 @@ export const MaskedText = () => {
         h='100%'
         align='center'
         justify='center'
-        fontSize={"5vw"}
-        lineHeight={"5vw"}
+        fontSize={{ base: "10vw", lg: "5vw" }}
+        lineHeight={{ base: "10vw", lg: "5vw" }}
         color='white'
         cursor='default'
       >
-        <Heading letterSpacing={"2.5px"} w='1000px' p='40px'>
+        <Heading
+          lineHeight='inherit'
+          fontSize='inherit'
+          letterSpacing={"2.5px"}
+          w='1000px'
+          p='40px'
+        >
           Welcome to my secret lair, meet a UI/UX Avenger 🦹🏽‍♂️, who dedicated his
           life to vanquishing the sinister forces of Bad UI and UX that plague
           websites{" "}

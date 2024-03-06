@@ -23,13 +23,14 @@ export const ThreeDSection = () => {
       scrollSnapAlign='center'
       scrollSnapStop='always'
       minH='100vh'
-      h='100%'
+      h='auto'
       w='100%'
       p='24px'
       overflow='hidden'
     >
       <Flex
         gap={"46px"}
+        mb='10vh'
         direction='row'
         align='end'
         justify='start'
@@ -38,7 +39,7 @@ export const ThreeDSection = () => {
         <Flex
           ref={plane}
           direction='column'
-          mt={{ base: "10vh", md: "15vh", lg: "20vh" }}
+          mt={{ base: "10vh", md: "8vh", lg: "20vh" }}
           ml={{ base: "10px", md: "15px", lg: "25px" }}
         >
           <ThreeDText primary={"Weapons"} secondary={"That I"} />
