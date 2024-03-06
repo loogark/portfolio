@@ -26,7 +26,7 @@ export const ContactForm = () => {
         import.meta.env.VITE_APP_PUBLIC_KEY ?? ""
       )
       .then(
-        (result) => {
+        () => {
           toast({
             title: "Message sent!",
             description: "I will get back to you as soon as possible",
@@ -36,7 +36,7 @@ export const ContactForm = () => {
           });
           setIsSubmitting(false);
         },
-        (error: any) => {
+        () => {
           toast({
             title: "Something went wrong, please try again later!",
             status: "error",
