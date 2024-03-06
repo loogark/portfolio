@@ -4,6 +4,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Spinner,
   Textarea,
   useToast,
 } from "@chakra-ui/react";
@@ -95,7 +96,10 @@ export const ContactForm = () => {
           color='#4831d4'
           mt='12px'
           variant='outline'
-          leftIcon={<BsFillSendFill size={16} />}
+          leftIcon={
+            isSubmitting ? <Spinner size='sm' /> : <BsFillSendFill size={16} />
+          }
+          isDisabled={isSubmitting}
           _hover={{ bg: "#4831d4", color: "#fff" }}
           as={Button}
           type='submit'

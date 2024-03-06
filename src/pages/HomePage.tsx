@@ -37,13 +37,14 @@ export const HomePage = () => {
       <Hero onScroll={onScroll} />
       <Box
         w='100%'
-        h='100vh'
+        h={{ base: "auto", md: "100vh" }}
         bg='#4831d4'
         scrollSnapAlign='center'
         scrollSnapStop='always'
         as='section'
         overflow='hidden'
         ref={selfRef}
+        py={{ base: "60px", md: "0px" }}
       >
         <Self />
       </Box>
@@ -51,8 +52,7 @@ export const HomePage = () => {
         scrollSnapAlign='center'
         scrollSnapStop='always'
         w='100%'
-        minH='100vh'
-        h='auto'
+        h={{ base: "auto", md: "100vh" }}
         bg='rgb(0, 0, 0)'
         as='section'
         overflow='hidden'
@@ -63,10 +63,10 @@ export const HomePage = () => {
         scrollSnapAlign='center'
         scrollSnapStop='always'
         w='100%'
-        h='100vh'
+        h={{ base: "auto", md: "100vh" }}
         bg='#4831d4'
         as='section'
-        overflow='hidden'
+        py={{ base: "120px", md: "0px" }}
       >
         <Contact />
       </Box>

@@ -46,7 +46,7 @@ export const Self = () => {
         <Text
           width={{ base: "100%", lg: "90%" }}
           my={"4px"}
-          fontSize={{ base: "lg", md: "xl" }}
+          fontSize={{ base: "md", md: "lg", lg: "xl" }}
           color='#fdf0d5'
         >
           Over the years, I have worked on a variety of projects, from financial
@@ -57,7 +57,7 @@ export const Self = () => {
         <Text
           width={{ base: "100%", lg: "90%" }}
           my={"4px"}
-          fontSize={{ base: "lg", md: "xl" }}
+          fontSize={{ base: "md", md: "lg", lg: "xl" }}
           color='#fdf0d5'
         >
           As a front-end developer i draw inspiration from a combination of

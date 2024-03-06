@@ -25,7 +25,7 @@ export const SkillsProgress = () => {
       viewport={{ once: false, amount: 0.4 }}
     >
       <Flex
-        mt='60px'
+        mt={{ base: "60px", md: "10px", lg: "60px" }}
         gap='8px'
         w='100%'
         direction='column'
