@@ -1,0 +1,58 @@
+export const projects = [
+  {
+    src: "/thirai.png",
+    alt: "Thirai",
+    title: "Thirai",
+    description: "Your one stop for all your movie needs.",
+    french_caption: "Un blog moderne avec Headless CMS.",
+    technology_used: ["react", "typescript", "nodejs", "mongodb", "tmdb"],
+    live_link: "https://thirai.vercel.app/home",
+    github_link: "https://github.com/loogark/thirai",
+  },
+  {
+    src: "/blog.png",
+    alt: "Techies Blog",
+    title: "Techies Blog",
+    description: "A Modern Blog with Headless CMS.",
+    french_caption: "Un blog moderne avec Headless CMS.",
+    technology_used: ["Next.js", "TailwindCSS", "graphQl", "graphcms", "sass"],
+    live_link: "https://techies-blog.vercel.app/",
+    github_link: "https://github.com/loogark/techies_blog",
+  },
+  {
+    src: "/tech.png",
+    alt: "Techies",
+    title: "Techies",
+    description: "A social media app for developers.",
+    french_caption: "Une application de médias sociaux pour les développeurs.",
+    technology_used: ["React", "node.js", "express", "mongoAtlas", "Postman"],
+    live_link: "https://techies-application.herokuapp.com/",
+    github_link: "https://github.com/loogark/techies",
+  },
+  {
+    src: "/spotify.jpeg",
+    alt: "spotify clone img",
+    title: "React Spotify clone",
+    description: "This is a Fullstack React Spotify Web application clone.",
+    french_caption:
+      "Il sagit dune application Web Full Stack avec TypeScript, PostgreSQL, Nestjs, Prisma et GraphQL.",
+    technology_used: [
+      "React",
+      "Bootstrap",
+      "node.js",
+      "axios",
+      "spotify-web-api",
+    ],
+    github_link: "https://github.com/loogark/spotify-react",
+  },
+  {
+    src: "/github.webp",
+    alt: "Github clone img",
+    title: "And many more...",
+    description: "You can check out more of my projects on my github page.",
+    french_caption:
+      "Il sagit dune application Web Full Stack avec TypeScript, PostgreSQL, Nestjs, Prisma et GraphQL.",
+    technology_used: [],
+    github_link: "https://github.com/loogark",
+  },
+];
