@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import styled from "@emotion/styled";
 import { useIsPresent } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { MaskedText } from "../components/MaskedHero/MaskedText";
@@ -46,9 +45,3 @@ export const SecretLairPage = () => {
     </Box>
   );
 };
-
-const StyledBox = styled(Box)`
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-`;
