@@ -1,5 +1,4 @@
 import { Box, useMediaQuery } from "@chakra-ui/react";
-import styled from "@emotion/styled";
 import { useIsPresent } from "framer-motion";
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
@@ -87,9 +86,3 @@ export const HomePage = () => {
     </Box>
   );
 };
-
-const StyledBox = styled(Box)`
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-`;
