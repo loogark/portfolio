@@ -10,10 +10,12 @@ import { Contact } from "../components/contact/Contact";
 import { Hero } from "../components/hero/Hero";
 import { SkillsProgress } from "../components/skills/SkillsProgress";
 import { SkillsSquare } from "../components/skills/SkillsSquare";
+import { useTranslation } from "../hooks/useTranslation";
 
 export const HomePage = () => {
   const [isLargeScreen] = useMediaQuery("(min-width: 1200px)");
   const isPresent = useIsPresent();
+  const [translate] = useTranslation();
 
   const selfRef = useRef<HTMLDivElement | null>(null);
 
@@ -25,14 +27,24 @@ export const HomePage = () => {
   };
 
   return (
-    <StyledBox w='100%' h='100%'>
+    <Box
+      w='100%'
+      h='100%'
+      scrollSnapType={{ base: "none", md: "y mandatory" }}
+      scrollBehavior='smooth'
+      overflowY='scroll'
+    >
       <Helmet>
-        <title>Home Page</title>
+        <title>{translate("Home Page", "homePage")}</title>
         <meta
           name='description'
           property='og:description'
-          content='Personal portfolio of Ragool krishnan created using React, TypeScript, Chakra-Ui and Framer Motion.'
-        />{" "}
+          content={translate(
+            `Personal portfolio of Ragool krishnan created using React, TypeScript, Chakra-Ui and Framer Motion.`,
+            "homePageDescription"
+          )}
+        />
+        <meta name='url' property='og:url' content='https://www.ragools.com/' />
       </Helmet>
       <Hero onScroll={onScroll} />
       <Box
@@ -49,7 +61,7 @@ export const HomePage = () => {
         <Self />
       </Box>
       <Box
-        scrollSnapAlign='start'
+        scrollSnapAlign={"start"}
         scrollSnapStop='always'
         w='100%'
         h={{ base: "auto", md: "100vh" }}
@@ -71,8 +83,8 @@ export const HomePage = () => {
         <Contact />
       </Box>
       <Transition isPresent={isPresent} />
-      <Footer isFull />
-    </StyledBox>
+      <Footer />
+    </Box>
   );
 };
 

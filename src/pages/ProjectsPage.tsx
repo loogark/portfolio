@@ -7,10 +7,12 @@ import { Helmet } from "react-helmet";
 import { Transition } from "../components/Transition";
 import { ProjectCard } from "../components/projects/ProjectCard";
 import { projects } from "../components/projects/data";
+import { useTranslation } from "../hooks/useTranslation";
 
 export const ProjectsPage = () => {
   const container = useRef(null);
   const isPresent = useIsPresent();
+  const [translate] = useTranslation();
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -38,12 +40,23 @@ export const ProjectsPage = () => {
       position='relative'
     >
       <Helmet>
-        <title>My Projects - Ragool's Portfolio</title>
+        <title>
+          {translate("My Projects", "myProjects")} -{" "}
+          {translate("Ragool's Portfolio", "title")}
+        </title>
         <meta
           name='description'
           property='og:description'
-          content='A showcase page for all the projects i did.'
-        />{" "}
+          content={translate(
+            "Welcome to my projects showcase, where creativity meets technology!",
+            "projectsDescription"
+          )}
+        />
+        <meta
+          name='url'
+          property='og:url'
+          content='https://www.ragools.com/projects'
+        />
       </Helmet>
       <Flex
         direction='column'
@@ -60,7 +73,7 @@ export const ProjectsPage = () => {
           letterSpacing={"1px"}
           mb='24px'
         >
-          Projects Showcase
+          {translate("Projects Showcase", "projectsShowcase")}
         </Heading>
         <Text
           textAlign='center'
@@ -68,10 +81,13 @@ export const ProjectsPage = () => {
           color='#fff'
           fontSize={{ base: "md", md: "xl" }}
         >
-          Welcome to my projects showcase, where creativity meets technology!
+          {translate(
+            `Welcome to my projects showcase, where creativity meets technology!
           I'm an enthusiastic individual who loves exploring various facets of
           software development. Here's a glimpse into some of my passion-driven
-          creations
+          creations`,
+            "projectsP1"
+          )}
         </Text>
       </Flex>
 

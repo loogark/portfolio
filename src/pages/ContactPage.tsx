@@ -3,8 +3,10 @@ import { useIsPresent } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { Transition } from "../components/Transition";
 import { Contact } from "../components/contact/Contact";
+import { useTranslation } from "../hooks/useTranslation";
 export const ContactPage = () => {
   const isPresent = useIsPresent();
+  const [translate] = useTranslation();
 
   return (
     <Box
@@ -17,11 +19,17 @@ export const ContactPage = () => {
       overflow='scroll'
     >
       <Helmet>
-        <title>Contact Me - Ragool's Portfolio</title>
+        <title>
+          {translate("Contact Me", "contactMe")} -{" "}
+          {translate("Ragool's Portfolio", "title")}
+        </title>
         <meta
           name='description'
           property='og:description'
-          content='My Secret lair which holds a very important secret.'
+          content={translate(
+            "Get in touch with me for any queries or collaborations.",
+            "contactPageDescription"
+          )}
         />{" "}
       </Helmet>
       <Box py='120px'>

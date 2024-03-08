@@ -14,6 +14,7 @@ import { motion, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { CiGlobe } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
+import { useTranslation } from "../../hooks/useTranslation";
 
 interface CardProps {
   i: number;
@@ -27,6 +28,7 @@ interface CardProps {
   targetScale: number;
   tags: string[];
   isLastCard: boolean;
+  translationKey: any;
 }
 
 export const ProjectCard = ({
@@ -41,8 +43,10 @@ export const ProjectCard = ({
   targetScale,
   tags,
   isLastCard,
+  translationKey,
 }: CardProps) => {
   const container = useRef(null);
+  const [translate] = useTranslation();
 
   const scale = useTransform(progress, range, [1, targetScale]);
 
@@ -118,7 +122,7 @@ export const ProjectCard = ({
               fontStyle={"italic"}
               letterSpacing='2px'
             >
-              {title}
+              {i === 4 ? translate(title, "anManyMore") : title}
             </Heading>
             <HStack spacing='10px' h='100%' p='8px 15px'>
               <Tooltip placement='top' label='Github' aria-label='Github'>
@@ -133,7 +137,7 @@ export const ProjectCard = ({
               {liveLink && (
                 <Tooltip
                   placement='top'
-                  label='Live Link'
+                  label={translate("Live Link", "liveLink")}
                   aria-label='live-link'
                 >
                   <Link
@@ -159,8 +163,7 @@ export const ProjectCard = ({
             gap={"10px"}
           >
             <Heading letterSpacing='2px' color='#fff' size='xl'>
-              {" "}
-              {title}{" "}
+              {i === 4 ? translate(title, "anManyMore") : title}
             </Heading>
             <Text
               display='block'
@@ -168,7 +171,7 @@ export const ProjectCard = ({
               color='#fff'
               fontSize='24px'
             >
-              {description}
+              {translate(description, translationKey)}
             </Text>
             <HStack wrap={"wrap"} spacing='10px' mt='10px'>
               {tags.map((tag, i) => {

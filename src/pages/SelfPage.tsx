@@ -4,19 +4,32 @@ import { Helmet } from "react-helmet";
 import { Transition } from "../components/Transition";
 import { ResumeCard } from "../components/resume-card/ResumeCard";
 import { Timeline } from "../components/timeline/Timeline";
+import { useTranslation } from "../hooks/useTranslation";
 
 export const SelfPage = () => {
   const isPresent = useIsPresent();
+  const [translate] = useTranslation();
 
   return (
     <Box w='100%' h='auto' bgColor='#4831d4'>
       <Helmet>
-        <title>My Self - Ragool's Portfolio</title>
+        <title>
+          {translate("Me, Myself and I", "mySelf")} -
+          {translate("Ragool's Portfolio", "title")}
+        </title>
         <meta
           name='description'
           property='og:description'
-          content='Know me better through my journey.'
-        />{" "}
+          content={translate(
+            "Know me better through my journey.",
+            "selfPageDescription"
+          )}
+        />
+        <meta
+          name='url'
+          property='og:url'
+          content='https://www.ragools.com/self'
+        />
       </Helmet>
       <Flex
         pt='120px'
@@ -43,31 +56,40 @@ export const SelfPage = () => {
             mb='24px'
             textAlign='center'
           >
-            My self
+            {translate("Me, Myself and I", "mySelf")}{" "}
           </Heading>
           <Text color='#fdf0d5' fontSize={{ base: "md", md: "xl" }} my={"4px"}>
-            I'm Ragool, a seasoned front-end developer with over 3 years of
+            {translate(
+              `  I'm Ragool, a seasoned front-end developer with over 3 years of
             experience in the field. My educational journey started with Noble
             Matriculation in 2012, followed by completing my undergraduate
             degree from Bharath University in 2016. Eager to deepen my
             knowledge, I pursued a Master's in Computer Science from ISEP,
-            graduating in 2019.
+            graduating in 2019.`,
+              "selfPageP1"
+            )}
           </Text>
           <Text color='#fdf0d5' fontSize={{ base: "md", md: "xl" }} my={"4px"}>
-            During my academic journey, I gained practical industry experience
-            through a six-month internship with Flaminem, a fintech company.
-            This opportunity allowed me to apply my theoretical knowledge to
-            real-world scenarios, honing my skills and preparing me for the
-            professional landscape.
+            {translate(
+              `During my academic journey, I gained practical industry experience
+              through a six-month internship with Flaminem, a fintech company.
+              This opportunity allowed me to apply my theoretical knowledge to
+              real-world scenarios, honing my skills and preparing me for the
+              professional landscape.`,
+              "selfPageP2"
+            )}
           </Text>
           <Text color='#fdf0d5' fontSize={{ base: "md", md: "xl" }} my={"4px"}>
-            My career officially took off when I secured a position with
-            Sievable, a web3-based search engine, marking my entry into the
-            dynamic world of web development. Currently, I'm contributing my
-            expertise as a front-end developer at Notice, a no-code content
-            management company. I remain committed to staying at the forefront
-            of technological advancements, bringing innovation and proficiency
-            to my role in the ever-evolving field of front-end development.
+            {translate(
+              `My career officially took off when I secured a position with
+              Sievable, a web3-based search engine, marking my entry into the
+              dynamic world of web development. Currently, I'm contributing my
+              expertise as a front-end developer at Notice, a no-code content
+              management company. I remain committed to staying at the forefront
+              of technological advancements, bringing innovation and proficiency
+              to my role in the ever-evolving field of front-end development.`,
+              "selfPageP3"
+            )}
           </Text>
         </Flex>
         <Flex

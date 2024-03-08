@@ -5,19 +5,32 @@ import { MaskedText } from "../components/MaskedHero/MaskedText";
 import { ScrollingText } from "../components/ScrollingText";
 import { ThreeDSection } from "../components/ThreeDSection/ThreeDSection";
 import { Transition } from "../components/Transition";
+import { useTranslation } from "../hooks/useTranslation";
 
 export const SecretLairPage = () => {
   const isPresent = useIsPresent();
+  const [translate] = useTranslation();
 
   return (
     <Box w='100%' h='100%'>
       <Helmet>
-        <title>Secret Lair - Ragool's Portfolio</title>
+        <title>
+          {translate("Secret Lair", "secretLair")} -
+          {translate("Ragool's Portfolio", "title")}
+        </title>
         <meta
           name='description'
           property='og:description'
-          content='My Secret lair which holds a very important secret.'
-        />{" "}
+          content={translate(
+            "My Secret lair which holds a very important secret.",
+            "secretLairDescription"
+          )}
+        />
+        <meta
+          name='url'
+          property='og:url'
+          content='https://www.ragools.com/secret-lair'
+        />
       </Helmet>
       <Box
         scrollSnapAlign='center'

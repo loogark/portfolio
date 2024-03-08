@@ -2,11 +2,13 @@ import { Flex, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import useMousePosition from "../../hooks/useMousePosition";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const MaskedText = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 300 : 40;
+  const size = isHovered ? 400 : 40;
+  const [translate] = useTranslation();
 
   return (
     <>
@@ -49,8 +51,11 @@ export const MaskedText = () => {
             setIsHovered(false);
           }}
         >
-          In other words you might have found out by now how mediocre of a
-          developer i am, i thought at least we can have fun with this.
+          {translate(
+            `In other words you might have found out by now how mediocre of a
+          developer i am, i thought at least we can have fun with this.`,
+            "maskedText"
+          )}
         </Heading>
       </Flex>
 
@@ -71,9 +76,12 @@ export const MaskedText = () => {
           w='1000px'
           p='40px'
         >
-          Welcome to my secret lair, meet a UI/UX Avenger 🦹🏽‍♂️, who dedicated his
-          life to vanquishing the sinister forces of Bad UI and UX that plague
-          websites{" "}
+          {translate(
+            ` Welcome to my secret lair, meet a UI/UX Avenger 🦹🏽‍♂️, who dedicated his
+            life to vanquishing the sinister forces of Bad UI and UX that plague
+            websites.`,
+            "maskedText1"
+          )}{" "}
         </Heading>
       </Flex>
     </>

@@ -1,9 +1,12 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "../../hooks/useTranslation";
 import { ContactForm } from "./ContactForm";
 import { PersonalInfo } from "./PersonalInfo";
 
 export const Contact = () => {
+  const [translate] = useTranslation();
+
   return (
     <Flex
       as={motion.div}
@@ -29,11 +32,14 @@ export const Contact = () => {
           fontSize={{ base: "3rem", md: "3.5rem", lg: "4rem" }}
           letterSpacing='1.5px'
         >
-          Get in touch with me
+          {translate("Get in touch with me", "getInTouch")}
         </Heading>
         <Text fontSize={{ base: "xs", md: "sm", lg: "md" }}>
-          Got a question or proposal, or just want to say hello? Go ahead, You
-          can reach me through phone, email or book a meeting.
+          {translate(
+            `Got a question or proposal, or just want to say hello? Go ahead, You
+          can reach me through phone, email or book a meeting.`,
+            "gotAQuestion"
+          )}
         </Text>
         <Flex
           direction={{ base: "column", lg: "row" }}

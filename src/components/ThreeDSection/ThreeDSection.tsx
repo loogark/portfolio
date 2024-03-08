@@ -1,10 +1,12 @@
 import { Box, Flex, Progress, Text, VStack } from "@chakra-ui/react";
 import React, { useRef } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 import { ThreeDText } from "./ThreeDText";
 
 export const ThreeDSection = () => {
   const plane = useRef<HTMLDivElement | null>(null);
   const maxRotate = 45;
+  const [translate] = useTranslation();
 
   const manageMouseMove = (e: React.MouseEvent) => {
     const x = e.clientX / window.innerWidth;
@@ -42,9 +44,18 @@ export const ThreeDSection = () => {
           mt={{ base: "10vh", md: "8vh", lg: "20vh" }}
           ml={{ base: "10px", md: "15px", lg: "25px" }}
         >
-          <ThreeDText primary={"Weapons"} secondary={"That I"} />
-          <ThreeDText primary={"On My"} secondary={"definitely"} />
-          <ThreeDText primary={"Arsenal"} secondary={"know of"} />
+          <ThreeDText
+            primary={translate("Weapons", "weapons")}
+            secondary={translate("That I", "thatI")}
+          />
+          <ThreeDText
+            primary={translate("On My", "onMy")}
+            secondary={translate("Definitely", "definitely")}
+          />
+          <ThreeDText
+            primary={translate("Arsenal", "arsenal")}
+            secondary={translate("Know of", "knowOf")}
+          />
         </Flex>
         <Flex
           ml={{ base: "15px", md: "25px", lg: "50px" }}

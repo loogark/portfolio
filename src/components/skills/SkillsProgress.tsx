@@ -8,8 +8,11 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const SkillsProgress = () => {
+  const [translate] = useTranslation();
+
   return (
     <Flex
       as={motion.div}
@@ -35,33 +38,45 @@ export const SkillsProgress = () => {
         <Heading
           fontSize={{ base: "3rem", md: "3.5rem", lg: "4rem" }}
           letterSpacing='1.5px'
-          color='#4831d4'
+          color='#ccf381'
         >
-          Tech Skills
+          {translate("What I bring to the table ?", "whatIBring")}
         </Heading>
         <Text fontSize={{ base: "md", md: "lg", lg: "xl" }} color='white'>
-          I bring a diverse skill set to web development, excelling in
+          {translate(
+            ` I bring a diverse skill set to web development, excelling in
           JavaScript, React, TypeScript, Node.js, MongoDB, Next.js, and Chakra
           UI. Proficient in crafting dynamic and scalable interfaces, I employ
           React Query for seamless state management and Styled Components for
-          clean styling.
+          clean styling.`,
+            "skillsProgressP1"
+          )}
         </Text>
         <Text fontSize={{ base: "md", md: "lg", lg: "xl" }} color='white'>
-          On the server side, I leverage Node.js for robust applications,
-          coupled with MongoDB for efficient data handling. Next.js optimizes
-          performance and SEO, enhancing the overall user experience.
+          {translate(
+            `On the server side, I leverage Node.js for robust applications,
+            coupled with MongoDB for efficient data handling. Next.js optimizes
+            performance and SEO, enhancing the overall user experience.`,
+            "skillsProgressP2"
+          )}
         </Text>
         <Text fontSize={{ base: "md", md: "lg", lg: "xl" }} color='white'>
-          My expertise extends to Apollo GraphQL and REST API development for
-          efficient data querying and integration. Additionally, I streamline my
-          workflow with Visual Studio Code.
+          {translate(
+            `My expertise extends to Apollo GraphQL and REST API development for
+            efficient data querying and integration. Additionally, I streamline my
+            workflow with Visual Studio Code.`,
+            "skillsProgressP3"
+          )}
         </Text>
         <Text fontSize={{ base: "md", md: "lg", lg: "xl" }} color='white'>
-          In summary, my skills enable me to contribute to creating
-          feature-rich, technically sound web applications, emphasizing clean
-          code and optimal development practices.{" "}
+          {translate(
+            ` In summary, my skills enable me to contribute to creating
+            feature-rich, technically sound web applications, emphasizing clean
+            code and optimal development practices.`,
+            "skillsProgressP4"
+          )}{" "}
           <Link to='/projects' style={{ color: "#ccf381" }}>
-            Check my skills at display here.
+            {translate("Check my skills at display here.", "checkMySkills")}
           </Link>
         </Text>
       </Flex>

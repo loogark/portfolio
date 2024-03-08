@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
+import { useTranslation } from "../hooks/useTranslation";
 
 const scroll = keyframes`
    	0% {
@@ -22,6 +23,8 @@ const scroll = keyframes`
 
 export const ScrollingText = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [translate] = useTranslation();
+
   return (
     <Box w='100%' h='100%' position='relative'>
       <Tooltip placement='top' label={isPlaying ? "pause" : "play"}>
@@ -78,30 +81,42 @@ export const ScrollingText = () => {
             size='5rem'
             as='h1'
           >
-            origins
+            {translate(`Origins`, "origins")}
           </Heading>
 
           <p style={{ marginTop: "20px" }}>
-            In a galaxy not so far away, on the humble planet Earth, a child was
+            {translate(
+              `In a galaxy not so far away, on the humble planet Earth, a child was
             born on April 16, 1995.Little did the world know that this seemingly
-            ordinary arrival would be destined for an extraordinary fate.
+            ordinary arrival would be destined for an extraordinary fate.`,
+              "scrollingText1"
+            )}
           </p>
 
           <p>
-            As the stars aligned and the cosmic forces whispered, it became
-            clear that this child was chosen for a mission beyond the ordinary
-            confines of existence.
+            {translate(
+              `As the stars aligned and the cosmic forces whispered, it became
+              clear that this child was chosen for a mission beyond the ordinary
+              confines of existence.`,
+              "scrollingText2"
+            )}
           </p>
 
           <p>
-            Destined to be a beacon of hope. The child decided to fight crime
-            and injustice when that plan failed miserable he decided to become a
-            front end developer.
+            {translate(
+              `Destined to be a beacon of hope. The child decided to fight crime
+              and injustice when that plan failed miserable he decided to become a
+              front end developer.`,
+              "scrollingText3"
+            )}
           </p>
 
           <p style={{ marginTop: "50px", marginBottom: "100px" }}>
-            He is been fighting the good fight against bad UI and UX ever since,
-            well at least he is trying....
+            {translate(
+              `He is been fighting the good fight against bad UI and UX ever since,
+              well at least he is trying....`,
+              "scrollingText4"
+            )}
           </p>
         </Box>
       </Flex>

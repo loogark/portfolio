@@ -89,25 +89,8 @@ export const HexaGrid = () => {
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-      </StyledRow>
-      <StyledRow>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
         <StyledHexogon></StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
         <Tooltip label='Figma'>
           <StyledHexogon>
             {" "}
@@ -132,7 +115,6 @@ export const HexaGrid = () => {
             <TbBrandVscode size={50} />{" "}
           </StyledHexogon>
         </Tooltip>
-        <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
@@ -189,6 +171,8 @@ export const HexaGrid = () => {
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+
         <Tooltip label='Framer Motion'>
           <StyledHexogon>
             {" "}
@@ -225,7 +209,6 @@ export const HexaGrid = () => {
             <TbBrandThreejs size={50} />{" "}
           </StyledHexogon>
         </Tooltip>
-        <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
       </StyledRow>
@@ -281,6 +264,7 @@ export const HexaGrid = () => {
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon></StyledHexogon>
         <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
 
         <Tooltip label='vite'>
           <StyledHexogon>
@@ -309,7 +293,6 @@ export const HexaGrid = () => {
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
-        <StyledHexogon> </StyledHexogon>
       </StyledRow>
       <StyledRow>
         <StyledHexogon> </StyledHexogon>
@@ -329,7 +312,24 @@ export const HexaGrid = () => {
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>
       </StyledRow>
-
+      <StyledRow>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+        <StyledHexogon> </StyledHexogon>
+      </StyledRow>
       <StyledRow>
         <StyledHexogon> </StyledHexogon>
         <StyledHexogon> </StyledHexogon>

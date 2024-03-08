@@ -11,10 +11,12 @@ import {
 import emailjs from "@emailjs/browser";
 import { FormEvent, useState } from "react";
 import { BsFillSendFill } from "react-icons/bs";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const toast = useToast();
+  const [translate] = useTranslation();
 
   const sendEmail = (event: FormEvent<HTMLFormElement>) => {
     event.persist();
@@ -55,7 +57,7 @@ export const ContactForm = () => {
     <Flex gap='12px' width={{ base: "100%", lg: "50%" }} direction='column'>
       <form onSubmit={sendEmail}>
         <FormControl>
-          <FormLabel>Name</FormLabel>
+          <FormLabel>{translate("Name", "labelName")}</FormLabel>
           <Input
             isRequired
             name='user_name'
@@ -67,7 +69,9 @@ export const ContactForm = () => {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Email address</FormLabel>
+          <FormLabel mt='8px'>
+            {translate("Email address", "labelEmail")}
+          </FormLabel>
           <Input
             isRequired
             name='user_email'
@@ -79,14 +83,17 @@ export const ContactForm = () => {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Message</FormLabel>
+          <FormLabel mt='8px'>{translate("Message", "labelMessage")}</FormLabel>
           <Textarea
             isRequired
             name='message'
             color='#4831d4'
             variant='ghost'
             resize='none'
-            placeholder='Here is a sample placeholder'
+            placeholder={translate(
+              `Hello Ragool, This is the best portfolio i ever saw, lets talk money, you know something like that.`,
+              "messagePlaceHolder"
+            )}
             size='sm'
             _placeholder={{ opacity: 0.4, color: "inherit" }}
           />
@@ -108,7 +115,7 @@ export const ContactForm = () => {
           isLoading={isSubmitting}
           size={"sm"}
         >
-          Send
+          {translate("Send", "send")}
         </Input>
       </form>
     </Flex>

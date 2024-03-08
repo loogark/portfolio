@@ -2,9 +2,11 @@ import { Box, Grid, Heading, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { useAnimate } from "framer-motion";
 import { useEffect } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const HeroText = () => {
   const [scope, animate] = useAnimate();
+  const [translate] = useTranslation();
 
   const heroAnimate = async () => {
     await animate(scope.current, {
@@ -67,10 +69,10 @@ export const HeroText = () => {
         fontFamily={"'Zen Dots', system-ui"}
         opacity={0.2}
       >
-        <Box as='span' data-text="I'm">
-          I'm{" "}
+        <Box as='span' data-text={translate("I'm", "intro")}>
+          {translate("I'm", "intro")}{" "}
         </Box>
-        <Box as='span' data-text='Ragool' pl={{ base: "0px", md: "2.25rem" }}>
+        <Box as='span' data-text='Ragool' pl={{ base: "0px", lg: "2.25rem" }}>
           Ragool
         </Box>
       </StyledBox>
@@ -86,7 +88,7 @@ export const HeroText = () => {
         mb='1rem'
         pr='2rem'
       >
-        Welcome
+        {translate("Welcome", "welcome")}
       </Text>
       <Text
         id='sub-text'
@@ -99,7 +101,7 @@ export const HeroText = () => {
         mb='1rem'
         pl={{ base: "0px", md: "2rem" }}
       >
-        Your friendly Neighborhood web developer
+        {translate("Your friendly Neighborhood web developer", "tagLine")}
       </Text>
     </Grid>
   );

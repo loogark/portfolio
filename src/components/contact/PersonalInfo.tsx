@@ -2,8 +2,11 @@ import { Flex, HStack, Link, StackDivider, Text } from "@chakra-ui/react";
 import { CiMail } from "react-icons/ci";
 import { MdOutlineLocalPhone, MdOutlineLocationOn } from "react-icons/md";
 import { footerLinks } from "../../data";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const PersonalInfo = () => {
+  const [translate] = useTranslation();
+
   return (
     <Flex
       width={{ base: "100%", lg: "50%" }}
@@ -38,7 +41,7 @@ export const PersonalInfo = () => {
         divider={<StackDivider borderColor='#4831d4' />}
       >
         {footerLinks.map((link, i) => {
-          const { title, href } = link;
+          const { title, href, translationKey } = link;
           return (
             <Link
               href={href}
@@ -47,7 +50,7 @@ export const PersonalInfo = () => {
               fontSize={{ base: "xs", md: "md", lg: "lg" }}
               key={`f_${i}`}
             >
-              {title}
+              {translate(title, translationKey as any)}
             </Link>
           );
         })}

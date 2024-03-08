@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
+import { useTranslation } from "../../hooks/useTranslation";
 
 interface Props {
   onClick: () => void;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export const NavButton = ({ onClick, isActive }: Props) => {
+  const [translate] = useTranslation();
+
   return (
     <Button
       variant='unstyled'
@@ -52,7 +55,7 @@ export const NavButton = ({ onClick, isActive }: Props) => {
             onClick();
           }}
         >
-          <PerspectiveText label='Close' />
+          <PerspectiveText label={translate("Close", "close")} />
         </Box>
       </Box>
     </Button>

@@ -1,5 +1,6 @@
 import { Box, Heading, Link, keyframes } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const wave = keyframes`
    0% {
@@ -22,6 +23,8 @@ export const ResumeCard = ({
   link,
   bg = "linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb)",
 }: ResumeCardProps) => {
+  const [translate] = useTranslation();
+
   return (
     <Link href={link} isExternal _hover={{ textDecoration: "none" }}>
       <Box
@@ -93,7 +96,7 @@ export const ResumeCard = ({
           >
             {name}
           </Heading>
-          Resume
+          {translate("Resume", "resume")}{" "}
         </Box>
       </Box>{" "}
     </Link>

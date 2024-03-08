@@ -10,40 +10,63 @@ import {
   Stepper,
   useSteps,
 } from "@chakra-ui/react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export const Timeline = () => {
+  const [translate] = useTranslation();
+
   const steps = [
-    { title: "Birth", description: "Born on 16,April 1995", icon: "🐣" },
     {
-      title: "Schooling",
-      description:
+      title: translate("Birth", "birth"),
+      description: translate("Born on 16,April 1995", "birthDescription"),
+      icon: "🐣",
+    },
+    {
+      title: translate("Schooling", "schooling"),
+      description: translate(
         "Finished high school on 2012 from Nobel matriculation school",
+        "schoolingDescription"
+      ),
       icon: "🧑🏽‍🏫",
     },
     {
-      title: "Under graduation",
-      description: "Graduated on 2016 from Bharath university in chennai",
+      title: translate("Under graduation", "underGrad"),
+      description: translate(
+        "Graduated on 2016 from Bharath university in chennai",
+        "underGradDescription"
+      ),
       icon: "🎓",
     },
     {
-      title: "Masters",
-      description: "Graduated on 2019 from ISEP in Paris",
+      title: translate("Masters", "masters"),
+      description: translate(
+        "Graduated on 2019 from ISEP in Paris",
+        "mastersDescription"
+      ),
       icon: "👨🏽‍🎓",
     },
     {
-      title: "Internship",
-      description: "6 months internship in Flaminem a Fintech company",
+      title: translate("Internship", "internship"),
+      description: translate(
+        "6 months internship in Flaminem a Fintech company",
+        "internshipDescription"
+      ),
       icon: "🏋️",
     },
     {
-      title: "Fist Job (2021)",
-      description: "1 year 2 months in Sievable a Web3 based search engine",
+      title: translate("Fist Job (2021)", "firstJob"),
+      description: translate(
+        "1 year 2 months in Sievable a Web3 based search engine",
+        "firstJobDescription"
+      ),
       icon: "🤹🏽‍♂️",
     },
     {
-      title: "Current Job (2022)",
-      description:
+      title: translate("Current Job (2022)", "currentJob"),
+      description: translate(
         "Currently working in Notice a no-code content management platform",
+        "currentJobDescription"
+      ),
       icon: "👨🏽‍💻",
     },
   ];

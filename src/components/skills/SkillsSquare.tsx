@@ -2,9 +2,12 @@ import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "../../hooks/useTranslation";
 import { HexaGrid } from "./HexaGrid";
 
 export const SkillsSquare = () => {
+  const [translate] = useTranslation();
+
   return (
     <Flex
       as={motion.div}
@@ -17,19 +20,22 @@ export const SkillsSquare = () => {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: false, amount: 0.4 }}
     >
-      <StyledBox mt='3%' ml='6%' width='40%' bg='rgb(0, 0, 0.92)'>
+      <StyledBox mt='-3%' ml='6%' width='40%' bg='rgb(0, 0, 0.92)'>
         <VStack gap='10px' align='start' justify='center'>
           <Heading size='lg' letterSpacing={"1.5px"}>
-            Tech Skills
+            {translate("What I bring to the table ?", "whatIBring")}
           </Heading>
           <Text fontSize='xl'>
-            Proficient in JavaScript, React, TypeScript, React Query, Styled
+            {translate(
+              `  Proficient in JavaScript, React, TypeScript, React Query, Styled
             Components, Node.js, MongoDB, Next.js, Chakra UI, Apollo GraphQL,
             and REST API development. Experienced in building scalable web
             applications, ensuring clean code practices. Proficient in using
-            Visual Studio Code for efficient development workflows.{" "}
+            Visual Studio Code for efficient development workflows.`,
+              "skillsSquareP"
+            )}{" "}
             <Link to='/projects' style={{ color: "#ccf381" }}>
-              Check my skills at display here.
+              {translate("Check my skills at display here.", "checkMySkills")}
             </Link>
           </Text>
         </VStack>

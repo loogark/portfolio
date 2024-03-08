@@ -1,18 +1,29 @@
-import { Box, Divider, Flex, Link, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Heading,
+  Link,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
+import { useSelectedLanguage } from "../contexts/selectedLanguage";
 import { footerLinks, links } from "../data";
+import { useTranslation } from "../hooks/useTranslation";
 
-interface Props {
-  isFull?: boolean;
-}
-export const Footer = ({ isFull }: Props) => {
+export const Footer = () => {
+  const { selectedLang, setSelectedLang } = useSelectedLanguage();
+  const [translate] = useTranslation();
+
   return (
     <Box
       scrollSnapAlign='center'
       scrollSnapStop='always'
       p='36px'
       w='100%'
-      h={isFull ? "100vh" : "400px"}
+      h={{ base: "auto", md: "100vh" }}
       bgColor='#000'
     >
       <Flex
@@ -40,14 +51,14 @@ export const Footer = ({ isFull }: Props) => {
             spacing='8px'
           >
             {links.map((link, i) => {
-              const { title, href } = link;
+              const { title, href, translationKey } = link;
               return (
                 <ReactRouterLink to={href} key={i} color='#CCF381'>
                   <Text
                     fontSize='24px'
                     textDecoration={i === 3 ? "line-through" : "none"}
                   >
-                    {title}
+                    {translate(title, translationKey as any)}
                   </Text>
                 </ReactRouterLink>
               );
@@ -62,13 +73,49 @@ export const Footer = ({ isFull }: Props) => {
             spacing='8px'
           >
             {footerLinks.map((link, i) => {
-              const { title, href } = link;
+              const { title, href, translationKey } = link;
               return (
                 <ReactRouterLink to={href} key={i} color='#CCF381'>
-                  <Text fontSize='24px'>{title}</Text>
+                  <Text fontSize='24px'>
+                    {translate(title, translationKey as any)}
+                  </Text>
                 </ReactRouterLink>
               );
             })}
+
+            <Flex direction='column' wrap={"wrap"}>
+              <Heading
+                fontSize='1rem'
+                lineHeight={"1rem"}
+                fontWeight={600}
+                letterSpacing={1}
+                mt='1rem'
+              >
+                Languages
+              </Heading>
+              <Flex flexDirection='row' wrap='wrap'>
+                <Button
+                  variant='Link'
+                  pl={0}
+                  color={selectedLang === "en" ? "#4831d4" : "#CCF381"}
+                  onClick={() => {
+                    setSelectedLang("en");
+                  }}
+                >
+                  English
+                </Button>
+                <Button
+                  variant='Link'
+                  pl={0}
+                  color={selectedLang === "fr" ? "#4831d4" : "#CCF381"}
+                  onClick={() => {
+                    setSelectedLang("fr");
+                  }}
+                >
+                  French
+                </Button>
+              </Flex>
+            </Flex>
           </VStack>
         </Flex>
 
@@ -91,7 +138,7 @@ export const Footer = ({ isFull }: Props) => {
             <Text mr='2px'>© 2024 </Text>
             <Text>
               {" "}
-              Made with 💖 by:{" "}
+              {translate("Made with 💖 by:", "madeWith")}{" "}
               <Link
                 color='#CCF381'
                 href='https://www.linkedin.com/in/ragool-krishnan/'
@@ -101,7 +148,10 @@ export const Footer = ({ isFull }: Props) => {
             </Text>
           </Flex>
           <Text color='#CCF381'>
-            Thank you so much for all the tutorials and inspiration for this.
+            {translate(
+              "Thank you so much for all the tutorials and inspiration for this.",
+              "homage"
+            )}{" "}
           </Text>
         </Flex>
       </Flex>

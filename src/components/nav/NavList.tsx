@@ -1,7 +1,9 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Link as ReactRouterLik } from "react-router-dom";
+import { useSelectedLanguage } from "../../contexts/selectedLanguage";
 import { footerLinks, links } from "../../data";
+import { useTranslation } from "../../hooks/useTranslation";
 import { perspective, slideIn } from "./animation";
 
 interface NavListProps {
@@ -9,6 +11,9 @@ interface NavListProps {
 }
 
 export const NavList = ({ onClose }: NavListProps) => {
+  const { selectedLang, setSelectedLang } = useSelectedLanguage();
+  const [translate] = useTranslation();
+
   return (
     <Flex
       direction='column'
@@ -19,7 +24,7 @@ export const NavList = ({ onClose }: NavListProps) => {
     >
       <Flex gap='10px' flexDirection='column'>
         {links.map((link, i) => {
-          const { title, href } = link;
+          const { title, href, translationKey } = link;
           return (
             <Link
               variant='unstyled'
@@ -47,7 +52,7 @@ export const NavList = ({ onClose }: NavListProps) => {
                   animate='enter'
                   exit='exit'
                 >
-                  {title}
+                  {translate(title, translationKey as any)}
                 </Box>
               </Box>
             </Link>
@@ -55,9 +60,68 @@ export const NavList = ({ onClose }: NavListProps) => {
         })}
       </Flex>
 
+      <Flex direction='column' wrap={"wrap"} as={motion.div}>
+        <Heading
+          as={motion.h6}
+          initial='initial'
+          animate='enter'
+          exit='exit'
+          fontSize='1rem'
+          lineHeight={"1rem"}
+          fontWeight={600}
+          letterSpacing={1}
+          variants={slideIn}
+          custom={0}
+        >
+          Languages
+        </Heading>
+        <Flex
+          initial='initial'
+          animate='enter'
+          exit='exit'
+          as={motion.div}
+          flexDirection='row'
+          wrap='wrap'
+        >
+          <Button
+            as={motion.button}
+            custom={0}
+            variants={perspective}
+            initial='initial'
+            animate='enter'
+            exit='exit'
+            variant='Link'
+            pl={0}
+            color={selectedLang === "en" ? "#4831d4" : "black"}
+            onClick={() => {
+              setSelectedLang("en");
+              onClose();
+            }}
+          >
+            English
+          </Button>
+          <Button
+            as={motion.button}
+            custom={1}
+            variants={perspective}
+            initial='initial'
+            animate='enter'
+            exit='exit'
+            variant='Link'
+            color={selectedLang === "fr" ? "#4831d4" : "black"}
+            onClick={() => {
+              setSelectedLang("fr");
+              onClose();
+            }}
+          >
+            French
+          </Button>
+        </Flex>
+      </Flex>
+
       <Flex wrap='wrap' as={motion.div}>
         {footerLinks.map((link, i) => {
-          const { title, href } = link;
+          const { title, href, translationKey } = link;
           return (
             <Link
               as={motion.a}
@@ -75,7 +139,7 @@ export const NavList = ({ onClose }: NavListProps) => {
               key={`f_${i}`}
               _hover={{ textDecoration: "none", color: "#4831d4" }}
             >
-              {title}
+              {translate(title, translationKey as any)}
             </Link>
           );
         })}
