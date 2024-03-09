@@ -75,11 +75,17 @@ export const Footer = () => {
             {footerLinks.map((link, i) => {
               const { title, href, translationKey } = link;
               return (
-                <ReactRouterLink to={href} key={i} color='#CCF381'>
+                <Link
+                  _hover={{ textDecoration: "none" }}
+                  isExternal
+                  href={href}
+                  key={i}
+                  color='#CCF381'
+                >
                   <Text fontSize='24px'>
                     {translate(title, translationKey as any)}
                   </Text>
-                </ReactRouterLink>
+                </Link>
               );
             })}
 
@@ -142,6 +148,7 @@ export const Footer = () => {
               <Link
                 color='#CCF381'
                 href='https://www.linkedin.com/in/ragool-krishnan/'
+                isExternal
               >
                 Ragool
               </Link>
