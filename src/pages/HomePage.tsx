@@ -1,6 +1,6 @@
 import { Box, useMediaQuery } from "@chakra-ui/react";
-import { useIsPresent } from "framer-motion";
-import { useRef } from "react";
+import { useInView, useIsPresent } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { Footer } from "../components/Footer";
 import { Self } from "../components/Self";
@@ -17,6 +17,14 @@ export const HomePage = () => {
   const [translate] = useTranslation();
 
   const selfRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(selfRef);
+  const hasScrolled = localStorage.getItem("hasScrolled");
+
+  useEffect(() => {
+    if (isInView && hasScrolled === null) {
+      localStorage.setItem("hasScrolled", "true");
+    }
+  }, [isInView]);
 
   const onScroll = () => {
     if (selfRef.current) {
