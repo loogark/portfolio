@@ -100,7 +100,7 @@ export const en = {
   projectsP1: `Welcome to my projects showcase, where creativity meets technology!
   I'm an enthusiastic individual who loves exploring various facets of
   software development. Here's a glimpse into some of my passion-driven
-  creations`,
+  creations.`,
   thiraiDescription: `Your one stop for all your movie needs.`,
   blogDescription: `A Modern Blog with Headless CMS.`,
   techiesDescription: `A social media app for like minded developers.`,
