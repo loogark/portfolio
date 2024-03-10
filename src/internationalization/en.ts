@@ -129,7 +129,7 @@ export const en = {
   well at least he is trying....`,
   weapons: "Weapons",
   thatI: "That I",
-  onMy: "On My",
+  onMy: "In My",
   definitely: "Definitely",
   arsenal: "Arsenal",
   knowOf: "Know of",
