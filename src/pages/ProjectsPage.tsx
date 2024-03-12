@@ -78,6 +78,7 @@ export const ProjectsPage = () => {
         <Text
           textAlign='center'
           width={{ base: "95%", md: "80%", lg: "70%" }}
+          maxW='1300px'
           color='#fff'
           fontSize={{ base: "md", md: "xl" }}
         >

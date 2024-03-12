@@ -12,7 +12,9 @@ import { SkillsSquare } from "../components/skills/SkillsSquare";
 import { useTranslation } from "../hooks/useTranslation";
 
 export const HomePage = () => {
-  const [isLargeScreen] = useMediaQuery("(min-width: 1200px)");
+  const [isLaptop] = useMediaQuery("(min-width: 1200px)");
+  const [isLargerThanLaptop] = useMediaQuery(["(max-width: 1500px)"]);
+
   const isPresent = useIsPresent();
   const [translate] = useTranslation();
 
@@ -76,7 +78,7 @@ export const HomePage = () => {
         as='section'
         overflow='hidden'
       >
-        {isLargeScreen ? <SkillsSquare /> : <SkillsProgress />}
+        {isLaptop && isLargerThanLaptop ? <SkillsSquare /> : <SkillsProgress />}
       </Box>
       <Box
         scrollSnapAlign='start'

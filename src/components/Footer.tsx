@@ -3,6 +3,7 @@ import {
   Button,
   Divider,
   Flex,
+  HStack,
   Heading,
   Link,
   Text,
@@ -10,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { useSelectedLanguage } from "../contexts/selectedLanguage";
-import { footerLinks, links } from "../data";
+import { acknowledgmentLinks, footerLinks, links } from "../data";
 import { useTranslation } from "../hooks/useTranslation";
 
 export const Footer = () => {
@@ -160,6 +161,25 @@ export const Footer = () => {
               "homage"
             )}{" "}
           </Text>
+          <HStack wrap='wrap'>
+            <Text color='#CCF381'>Acknowledgment : </Text>
+            {acknowledgmentLinks.map((link, i) => {
+              const { title, href, translationKey } = link;
+              return (
+                <Link
+                  _hover={{ textDecoration: "none" }}
+                  isExternal
+                  href={href}
+                  key={i}
+                  color='#CCF381'
+                >
+                  <Text fontSize='16px'>
+                    {translate(title, translationKey as any)}
+                  </Text>
+                </Link>
+              );
+            })}
+          </HStack>
         </Flex>
       </Flex>
     </Box>

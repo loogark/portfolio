@@ -63,6 +63,7 @@ export const ProjectCard = ({
     >
       <Box
         width='90vw'
+        maxW={"1300px"}
         height='fit-content'
         as={motion.div}
         position='relative'

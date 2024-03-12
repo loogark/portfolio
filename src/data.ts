@@ -48,3 +48,16 @@ export const footerLinks = [
     translationKey: "resume",
   },
 ];
+
+export const acknowledgmentLinks = [
+  {
+    title: "olaolu portfolio",
+    href: "https://olaolu.dev/",
+    translationKey: "",
+  },
+  {
+    title: "Oli's blog",
+    href: "https://blog.olivierlarose.com/",
+    translationKey: "",
+  },
+];

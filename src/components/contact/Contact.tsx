@@ -24,6 +24,7 @@ export const Contact = () => {
         bgColor='#ccf381'
         gap='12px'
         width={{ base: "90%", md: "80%", lg: "70%" }}
+        maxW='1300px'
         h='fit-content'
         direction='column'
       >
