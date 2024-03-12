@@ -162,7 +162,7 @@ export const Footer = () => {
             )}{" "}
           </Text>
           <HStack wrap='wrap'>
-            <Text color='#CCF381'>Acknowledgment : </Text>
+            <Text color='#CCF381'>Inspirations : </Text>
             {acknowledgmentLinks.map((link, i) => {
               const { title, href, translationKey } = link;
               return (
